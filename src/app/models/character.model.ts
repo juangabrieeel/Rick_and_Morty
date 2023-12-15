@@ -1,4 +1,3 @@
-// /src/app/models/character.model.ts
 export class Character {
     id: number;
     name: string;

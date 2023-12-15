@@ -1,4 +1,3 @@
-// /src/app/components/episode/episode.component.ts
 import { Component, OnInit } from '@angular/core';
 import { EpisodeService } from '../../service/episode.service';
 import { Episode } from '../../models/episode.model';

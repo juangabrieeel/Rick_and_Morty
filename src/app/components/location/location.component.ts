@@ -1,4 +1,3 @@
-// /src/app/components/location/location.component.ts
 import { Component, OnInit } from '@angular/core';
 import { LocationService } from '../../service/location.service';
 import { Location } from '../../models/location.model';

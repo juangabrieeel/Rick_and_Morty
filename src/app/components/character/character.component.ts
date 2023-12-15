@@ -1,4 +1,3 @@
-// /src/app/components/character/character.component.ts
 import { Component, OnInit } from '@angular/core';
 import { CharacterService } from '../../service/character.service';
 import { Character } from '../../models/character.model';

@@ -1,4 +1,3 @@
-// /src/app/pages/character-detail/character-detail.component.ts
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { CharacterService } from '../../service/character.service';
