@@ -1,0 +1,36 @@
+/* /src/app/pages/character-detail/character-detail.component.css */
+.character-detail-container {
+    background-color: black;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.character-image {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.character-details {
+    margin-bottom: 20px;
+}
+
+.back-button {
+    background-color: rgba(255, 255, 255, 0.8);
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    /* Ajusta el tamaño del texto según tus preferencias */
+    border-radius: 8px;
+    /* Ajusta la curvatura de los bordes según tus preferencias */
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.back-button:hover {
+    background-color: rgba(255, 255, 255, 1);
+}

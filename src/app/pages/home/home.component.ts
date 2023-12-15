@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { CharacterService } from '../../service/character.service';
 import { Character } from '../../models/character.model';
 
@@ -8,13 +9,18 @@ import { Character } from '../../models/character.model';
   styleUrls: ['./home.component.css'],
 })
 export class HomeComponent implements OnInit {
+  title = 'Proyecto Angular';
   characters: Character[] = [];
 
-  constructor(private characterService: CharacterService) { }
+  constructor(private router: Router, private characterService: CharacterService) { }
 
   ngOnInit(): void {
     this.characterService.getCharacters().subscribe((characters) => {
       this.characters = characters;
     });
+  }
+
+  navigateToCharacterDetail(characterId: number): void {
+    this.router.navigate(['/character', characterId]);
   }
 }

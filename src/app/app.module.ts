@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule, provideClientHydration } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HttpClientXsrfModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './pages/home/home.component';
@@ -21,11 +21,23 @@ import { CharacterDetailComponent } from './pages/character-detail/character-det
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    HttpClientXsrfModule.withOptions({
+      cookieName: 'XSRF-TOKEN',
+      headerName: 'X-XSRF-TOKEN'
+    }),
   ],
   providers: [
-    provideClientHydration()
+    provideClientHydration(),
+    {
+      provide: 'LOCALSTORAGE',
+      useFactory: provideLocalStore,
+    },
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule { }
+
+export function provideLocalStore() {
+  return typeof window !== 'undefined' ? window.localStorage : null;
+}
