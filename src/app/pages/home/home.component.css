@@ -1,0 +1,24 @@
+/* /src/app/pages/home/home.component.css */
+.character-card {
+    display: flex;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.character-image {
+    width: 100px;
+    height: 100px;
+    margin-right: 10px;
+    border-radius: 50%;
+}
+
+.character-details {
+    display: flex;
+    flex-direction: column;
+}
+
+h2 {
+    margin-bottom: 5px;
+}

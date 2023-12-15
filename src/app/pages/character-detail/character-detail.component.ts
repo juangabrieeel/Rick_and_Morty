@@ -4,7 +4,6 @@ import { ActivatedRoute } from '@angular/router';
 import { CharacterService } from '../../service/character.service';
 import { Character } from '../../models/character.model';
 
-
 @Component({
   selector: 'app-character-detail',
   templateUrl: './character-detail.component.html',
@@ -19,9 +18,13 @@ export class CharacterDetailComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    const characterId = Number(this.route.snapshot.paramMap.get('id'));
-    this.characterService.getCharacterById(characterId).subscribe((character) => {
-      this.character = character;
+    this.route.paramMap.subscribe((params) => {
+      const characterId = Number(params.get('id'));
+      if (!isNaN(characterId)) {
+        this.characterService.getCharacter(characterId).subscribe((character) => {
+          this.character = character;
+        });
+      }
     });
   }
 }
