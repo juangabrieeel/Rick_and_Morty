@@ -1,0 +1,9 @@
+<!-- /src/app/pages/character-detail/character-detail.component.html -->
+<div *ngIf="character">
+    <img [src]="character.image" alt="{{ character.name }}">
+    <h3>{{ character.name }}</h3>
+    <p>Status: {{ character.status }}</p>
+    <p>Species: {{ character.species }}</p>
+    <!-- Agrega más detalles según tus necesidades -->
+    <button routerLink="/">Back</button>
+</div>
