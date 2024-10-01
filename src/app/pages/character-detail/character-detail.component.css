@@ -1,3 +1,10 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
 .character-detail-container {
     background-image: url('https://aldescubierto.org/wp-content/uploads/2021/07/Portada_RickyMorty_web.jpg');
     background-size: cover;
@@ -55,7 +62,7 @@
 }
 
 .back-button {
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: #00c932;
     color: black;
     border: none;
     padding: 12px 25px;

@@ -8,6 +8,12 @@ import { CharacterComponent } from './components/character/character.component';
 import { LocationComponent } from './components/location/location.component';
 import { EpisodeComponent } from './components/episode/episode.component';
 import { CharacterDetailComponent } from './pages/character-detail/character-detail.component';
+import { FormsModule } from '@angular/forms';
+import { CharacterService } from './service/character.service';
+
+export function provideLocalStore() {
+  return typeof window !== 'undefined' ? window.localStorage : null;
+}
 
 @NgModule({
   declarations: [
@@ -20,6 +26,7 @@ import { CharacterDetailComponent } from './pages/character-detail/character-det
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     AppRoutingModule,
     HttpClientModule,
     HttpClientXsrfModule.withOptions({
@@ -33,11 +40,8 @@ import { CharacterDetailComponent } from './pages/character-detail/character-det
       provide: 'LOCALSTORAGE',
       useFactory: provideLocalStore,
     },
+    CharacterService,  // Consolidado en un solo array de providers
   ],
   bootstrap: [AppComponent],
 })
 export class AppModule { }
-
-export function provideLocalStore() {
-  return typeof window !== 'undefined' ? window.localStorage : null;
-}

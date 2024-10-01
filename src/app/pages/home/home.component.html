@@ -1,15 +1,37 @@
-<div class="home-container">
-    <h1>{{ title }}</h1>
-    <div *ngFor="let character of characters" class="character-card">
-        <a [routerLink]="['/character', character.id]">
-            <img [src]="character.image" alt="{{ character.name }}"
-                class="character-image">
-            <div class="character-details">
-                <h2>{{ character.name }}</h2>
-                <p>Status: {{ character.status }}</p>
-                <p>Species: {{ character.species }}</p>
-                <p>Gender: {{ character.gender }}</p>
-            </div>
-        </a>
+<div class="all">
+    <div class="home">
+        <h1>{{ title }}</h1>
+        <div class="search-sort-container">
+            <input type="text" [(ngModel)]="searchTerm" placeholder="Buscar personaje" class="search-bar">
+            <select [(ngModel)]="sortCriteria" class="sort-dropdown">
+                <option value="name">Nombre</option>
+                <option value="species">Especie</option>
+                <option value="status">Estado</option>
+            </select>
+        </div>
+    </div>
+    <div class="home-container">
+        <!-- Mensaje cuando no hay personajes -->
+        <div *ngIf="sortedCharacters.length === 0" class="no-characters-message">
+            <p>No se encontraron personajes que coincidan con tu búsqueda.</p>
+        </div>
+
+        <div *ngFor="let character of sortedCharacters.slice((currentPage - 1) * pageSize, currentPage * pageSize)"
+            class="character-card">
+            <a [routerLink]="['/character', character.id]">
+                <img [src]="character.image" alt="{{ character.name }}" class="character-image">
+                <div class="character-details">
+                    <h2>{{ character.name }}</h2>
+                    <p>Status: {{ character.status }}</p>
+                    <p>Species: {{ character.species }}</p>
+                    <p>Gender: {{ character.gender }}</p>
+                </div>
+            </a>
+        </div>
+
+        <div class="pagination">
+            <button (click)="prevPage()" [disabled]="currentPage === 1">Anterior</button>
+            <button (click)="nextPage()" [disabled]="currentPage === totalPages">Siguiente</button>
+        </div>
     </div>
 </div>

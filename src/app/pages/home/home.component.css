@@ -1,41 +1,162 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+.all {
+    background-image: url('https://pittnews.com/wp-content/uploads/2020/05/Image-from-iOS-1-900x694.png');
+    /* Asegura que cubra toda la altura */
+    background-size: cover;
+}
+
 .home-container {
-    background-image:  url('https://pittnews.com/wp-content/uploads/2020/05/Image-from-iOS-1-900x694.png');
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    /* Alinea correctamente los elementos */
+    padding: 20px;
+    /* Espaciado interno */
+    margin: 0;
+    /* Evita márgenes que puedan causar espacios */
+}
+
+.home {
+    margin: 20px 0;
+    /* Ajusta márgenes para evitar espacios innecesarios */
+    padding: 20px;
+    /* Asegura un padding interno uniforme */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.search-bar {
+    width: 300px;
+    /* Establecer un ancho fijo para la barra de búsqueda */
+    padding: 10px;
+    /* Espaciado interno */
+    margin: 10px 0;
+    /* Espaciado superior e inferior */
+    border: none;
+    /* Sin borde */
+    border-radius: 5px;
+    /* Bordes redondeados */
+    background-color: rgba(255, 255, 255, 0.8);
+    /* Fondo blanco semitransparente */
+    color: black;
+    /* Color del texto */
+    font-size: 1em;
+    /* Tamaño de la fuente */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    /* Sombra para efecto de profundidad */
+}
+
+.sort-dropdown {
+    width: 300px;
+    /* Establecer un ancho fijo para el menú desplegable */
+    padding: 10px;
+    /* Espaciado interno */
+    margin: 10px 0;
+    /* Espaciado superior e inferior */
+    border: none;
+    /* Sin borde */
+    border-radius: 5px;
+    /* Bordes redondeados */
+    background-color: rgba(255, 255, 255, 0.8);
+    /* Fondo blanco semitransparente */
+    color: black;
+    /* Color del texto */
+    font-size: 1em;
+    /* Tamaño de la fuente */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    /* Sombra para efecto de profundidad */
+}
+
+button {
+    padding: 10px 20px;
+    /* Espaciado interno */
+    margin: 10px;
+    /* Espaciado alrededor de los botones */
+    border: none;
+    /* Sin borde */
+    border-radius: 5px;
+    /* Bordes redondeados */
+    background-color: #00c932;
+    /* Color de fondo */
+    color: white;
+    /* Color del texto */
+    font-size: 1em;
+    /* Tamaño de la fuente */
+    cursor: pointer;
+    /* Cambiar el cursor al pasar el ratón */
+    transition: background-color 0.3s ease;
+    /* Transición para el color de fondo */
+}
+
+button:hover {
+    background-color: #009924;
+    /* Color más oscuro al pasar el ratón */
+}
+
+button:disabled {
+    background-color: rgba(0, 201, 50, 0.5);
+    /* Color más claro para botones deshabilitados */
+    cursor: not-allowed;
+    /* Cambiar el cursor para botones deshabilitados */
+}
+
+.home-container {
+    background-size: cover;
+    /* Asegura que la imagen cubra todo el contenedor */
+    background-position: center;
+    /* Centra la imagen de fondo */
     color: white;
     padding: 20px;
     text-align: center;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    /* Centra las tarjetas */
 }
 
 h1 {
-    font-size: 2em;
+    font-size: 2.5em;
+    /* Aumenta el tamaño del título */
     margin-bottom: 20px;
     width: 100%;
     color: #00c932;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-align: center;
 }
 
 .character-card {
-    background-color: rgba(97, 90, 90, 0.8);
-    border-radius: 8px;
+    background-color: rgba(97, 90, 90, 0.9);
+    /* Aumenta la opacidad para mejor contraste */
+    border-radius: 10px;
+    /* Aumenta la curvatura */
     overflow: hidden;
-    margin-bottom: 20px;
-    transition: transform 0.3s ease-in-out;
-    width: calc(20% - 15px);
-    /* Cambia el ancho al 20% */
-    margin-right: 15px;
-    /* Reduce el margen entre tarjetas */
+    margin: 10px;
+    /* Simplifica el margen y asegura espacio uniforme */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    /* Añadir transición para sombra */
+    width: calc(20% - 20px);
+    /* Mantener el 20% del ancho, pero restar más margen */
 }
 
 .character-card:nth-child(5n) {
-    margin-right: 1;
+    margin-right: 0;
     /* Para que la última tarjeta no tenga margen */
 }
 
 .character-card:hover {
     transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    /* Añadir sombra al pasar el ratón */
 }
 
 .character-card a {
@@ -47,19 +168,48 @@ h1 {
 .character-image {
     width: 100%;
     height: auto;
-    border-top-left-radius: 8px;
-    border-top-right-radius: 8px;
+    border-top-left-radius: 10px;
+    /* Ajustar el borde superior */
+    border-top-right-radius: 10px;
+    /* Ajustar el borde superior */
 }
 
 .character-details {
-    padding: 10px;
+    padding: 15px;
+    /* Aumentar el padding para más espacio */
+    background-color: rgba(0, 0, 0, 0.7);
+    /* Fondo semitransparente para mejorar la legibilidad */
+    border-bottom-left-radius: 10px;
+    /* Bordes en la parte inferior */
+    border-bottom-right-radius: 10px;
+    /* Bordes en la parte inferior */
 }
 
 h2 {
     margin-bottom: 10px;
-    font-size: 1.2em;
+    font-size: 1.5em;
+    /* Aumentar el tamaño del subtítulo */
 }
 
 p {
     margin: 5px 0;
+    font-size: 1em;
+    /* Asegurar un tamaño de texto adecuado */
+}
+
+.no-characters-message {
+    color: white;
+    /* O el color que prefieras */
+    text-align: center;
+    /* Centra el texto */
+    margin: 20px 0;
+    /* Espaciado alrededor del mensaje */
+    font-size: 1.2em;
+    /* Tamaño de la fuente */
+    background-color: rgba(0, 0, 0, 0.7);
+    /* Fondo semitransparente */
+    padding: 15px;
+    /* Espacio interno */
+    border-radius: 10px;
+    /* Bordes redondeados */
 }
