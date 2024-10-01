@@ -6,7 +6,9 @@ body {
 }
 
 .all {
-    background-image: url('https://pittnews.com/wp-content/uploads/2020/05/Image-from-iOS-1-900x694.png');
+    /*background-image: url('https://pittnews.com/wp-content/uploads/2020/05/Image-from-iOS-1-900x694.png');
+    */
+    background-color: black;
     /* Asegura que cubra toda la altura */
     background-size: cover;
 }

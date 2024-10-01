@@ -15,7 +15,7 @@ export enum SortCriteria {
   styleUrls: ['./home.component.css'],
 })
 export class HomeComponent implements OnInit {
-  title = 'Proyecto Angular';
+  title = 'Proyecto en Angular';
   characters: Character[] = [];
   searchTerm: string = '';
   sortCriteria: SortCriteria = SortCriteria.Name; // Usar Enum aquí
