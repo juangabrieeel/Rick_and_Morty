@@ -1,17 +1,20 @@
 .home-container {
-    background-color: black;
+    background-image:  url('https://pittnews.com/wp-content/uploads/2020/05/Image-from-iOS-1-900x694.png');
     color: white;
     padding: 20px;
     text-align: center;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: center;
+    /* Centra las tarjetas */
 }
 
 h1 {
     font-size: 2em;
     margin-bottom: 20px;
     width: 100%;
+    color: #00c932;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 .character-card {
@@ -20,12 +23,15 @@ h1 {
     overflow: hidden;
     margin-bottom: 20px;
     transition: transform 0.3s ease-in-out;
-    width: calc(25% - 20px);
-    margin-right: 20px;
+    width: calc(20% - 15px);
+    /* Cambia el ancho al 20% */
+    margin-right: 15px;
+    /* Reduce el margen entre tarjetas */
 }
 
-.character-card:nth-child(4n) {
-    margin-right: 0;
+.character-card:nth-child(5n) {
+    margin-right: 1;
+    /* Para que la última tarjeta no tenga margen */
 }
 
 .character-card:hover {

@@ -9,7 +9,7 @@ import { Character } from '../../models/character.model';
   styleUrls: ['./home.component.css'],
 })
 export class HomeComponent implements OnInit {
-  title = 'Proyecto Angular';
+  title = 'Proyecto en Angular';
   characters: Character[] = [];
 
   constructor(private router: Router, private characterService: CharacterService) { }

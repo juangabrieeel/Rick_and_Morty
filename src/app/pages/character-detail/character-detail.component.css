@@ -1,9 +1,32 @@
-/* /src/app/pages/character-detail/character-detail.component.css */
 .character-detail-container {
-    background-color: black;
+    background-image: url('https://aldescubierto.org/wp-content/uploads/2021/07/Portada_RickyMorty_web.jpg');
+    background-size: cover;
+    /* Hace que la imagen cubra todo el contenedor */
+    background-position: center;
     color: white;
-    padding: 20px;
+    padding: 60px 20px;
+    /* Aumenta el padding para dar más espacio alrededor del contenido */
     text-align: center;
+    position: relative;
+}
+
+.character-detail-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    /* Añade una capa oscura sobre la imagen de fondo */
+    z-index: 0;
+    /* Asegura que el contenido quede por encima de esta capa */
+}
+
+.character-detail-container * {
+    position: relative;
+    z-index: 1;
+    /* Asegura que el contenido esté por encima de la capa oscura */
 }
 
 .character-image {
@@ -12,25 +35,41 @@
     height: auto;
     border-radius: 8px;
     margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    /* Añade sombra a la imagen */
+    transition: transform 0.3s ease;
+    /* Añade una animación suave al hacer hover */
+}
+
+.character-image:hover {
+    transform: scale(1.05);
+    /* Efecto de zoom suave al pasar el mouse sobre la imagen */
 }
 
 .character-details {
     margin-bottom: 20px;
+    font-size: 1.1em;
+    /* Ajusta el tamaño de fuente */
+    line-height: 1.5;
+    /* Mejora la legibilidad */
 }
 
 .back-button {
     background-color: rgba(255, 255, 255, 0.8);
     color: black;
     border: none;
-    padding: 10px 20px;
+    padding: 12px 25px;
     font-size: 1.2em;
-    /* Ajusta el tamaño del texto según tus preferencias */
     border-radius: 8px;
-    /* Ajusta la curvatura de los bordes según tus preferencias */
     cursor: pointer;
-    transition: background-color 0.3s ease-in-out;
+    transition: background-color 0.3s ease-in-out, transform 0.3s ease;
+    /* Añade una animación suave al hacer hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    /* Añade sombra al botón */
 }
 
 .back-button:hover {
     background-color: rgba(255, 255, 255, 1);
+    transform: translateY(-3px);
+    /* Efecto de levantamiento al pasar el mouse sobre el botón */
 }
